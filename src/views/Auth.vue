@@ -32,7 +32,7 @@ import axios from 'axios'
             const params = {
                 name: this.username, password: this.password
             }
-            axios.post('127.0.0.1:8001/user', params)
+            axios.post('/user', params)
             .then(response => this.checkCorrect(response.data.userId))
         },
         checkCorrect(data){
