@@ -1,6 +1,12 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import About from '@/views/About'
+import Home from '@/views/Home'
+import Price from '@/views/Price'
+import Registration from '@/views/Registration'
+import Service from '@/views/Service'
+import Team from '@/views/Team'
+import Auth from '@/views/Auth'
 
 Vue.use(VueRouter)
 
@@ -14,26 +20,38 @@ const routes = [
   {
     path: '/about',
     name: 'About',
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue'),
+    component: About,
     meta: { title: 'RocketWash | About' }
   },
   {
     path: '/price',
     name: 'Price',
-    component: () => import(/* webpackChunkName: "price" */ '../views/Price.vue'),
+    component: Price,
     meta: { title: 'RocketWash | Price' }
   },
   {
     path: '/service',
     name: 'Service',
-    component: () => import(/* webpackChunkName: "service" */ '../views/Service.vue'),
+    component: Service,
     meta: { title: 'RocketWash | Service' }
   },
   {
     path: '/team',
     name: 'Team',
-    component: () => import(/* webpackChunkName: "team" */ '../views/Team.vue'),
+    component: Team,
     meta: { title: 'RocketWash | Team' }
+  },
+  {
+    path: '/register',
+    name: 'Register',
+    component: Registration,
+    meta: { title: 'RocketWash | Register' }
+  },
+  {
+    path: '/auth',
+    name: 'Auth',
+    component: Auth,
+    meta: { title: 'RocketWash | Auth' }
   }
 ]
 

@@ -1,67 +1,26 @@
 
 <template>
-  <div class="header">
-    <div class="container">
-        <div class="header__inner">
-            
-            <div class="nav">
-                <router-link to="/">Главная</router-link> 
-                <router-link to="/about">О нас</router-link>
-                <router-link to="/price">Цены</router-link> 
-                <router-link to="/service">Услуги</router-link>
-                <router-link to="/team">специалисты</router-link> 
-            </div>
-        </div>
+    <div id="main-container">
+        <Header />
+            <main>
+                <router-view />
+            </main>
+        <Footer />
     </div>
-    <router-view />
-     <!-- Footer -->
-    <div class="footer">
-        <div class="container">
-            <div class="footer__inner">
-                <div class="footer__block">
-                    <div class="footer__title">Адрес</div>
-                    <div class="footer__address">
-                        <div>Россия, Город Белгород</div>
-                        <div>Улица Щорса 21</div>
-                    </div>
-                </div>
-                <div class="footer__block">
-                    <div class="footer__title">Немного о нашей студии</div>
-                    <div class="footer__text">
-                        <p>Работаем в данной сфере более 5 лет. Все наши специалисты высоко квалифицированные, а средства лучшего качества на рынке.</p>
-                    </div>
-                </div>
-                <div class="footer__block">
-                    <div class="footer__title">Контакты</div>
-                    <div class="footer__text">
-                        <p>Телефон: +7-910-816-16-08</p>
-                        <p>Почта: rocket_wash@gmail.com</p>
-                    </div>
-                </div>
-            </div><!-- /.footer__inner -->
-
-        </div><!-- /.container -->
-
-        <div class="copyright">
-            <div class="container">
-                <div class="copyright__text">
-                    <div>Copyright © 2021 Polina Litvinova PV-41. All Rights Reserved</div>
-                </div>
-            </div>
-        </div>
-    </div>
- </div>
 </template>
 
 <script>
 import VBtn from './components/v-btn.vue'
 import vMainWrapper from './components/v-main-wrapper.vue'
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 
 export default {
-  name: 'app', 
   components: {
     vMainWrapper,
-    VBtn
+    VBtn,
+    Header,
+    Footer
   }, 
   data(){
     return{
@@ -71,7 +30,34 @@ export default {
 }
 
 </script>
-<style scoped>
+<style>
+#app {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+#main-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+main {
+    flex: 1 0 auto;
+}
 
 /* Container
 ===================*/
@@ -88,12 +74,6 @@ export default {
 
 .header {
     width: 100%;
-    height: 0px;
-
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1000;
 }
 
 .header__inner {

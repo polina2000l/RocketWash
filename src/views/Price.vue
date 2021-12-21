@@ -83,7 +83,7 @@
 /********* Pricing CSS *********/
 /*******************************/
 .price {
-    position: relative;
+    /* position: relative; */
     width: 100%;
     padding: 45px 0 15px 0;
 }
@@ -97,7 +97,7 @@
 }
 
 .price-item {
-    position: relative;
+    /* position: relative; */
     margin-bottom: 30px;
     background: #fdfdfd;
     border-radius: 5px;
